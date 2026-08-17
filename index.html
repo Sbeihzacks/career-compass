@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An evidence-informed, private university study exploration assessment for students.">
+  <title>Career Compass — University Study Explorer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to the assessment</a>
+
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Career Compass home">
+      <span class="brand-mark" aria-hidden="true"><span></span></span>
+      <span>Career Compass</span>
+    </a>
+    <span class="privacy-chip"><span aria-hidden="true">●</span> Private on this device</span>
+  </header>
+
+  <main id="main">
+    <section id="welcome-view" class="view welcome-view" aria-labelledby="welcome-title">
+      <div class="hero-copy">
+        <p class="eyebrow">University direction <span>•</span> about 12–15 minutes</p>
+        <h1 id="welcome-title">A better question than<br><em>“What type am I?”</em></h1>
+        <p class="hero-lede">Discover the study environments and subject families worth exploring—using your interests, work style, values, and current evidence of readiness.</p>
+
+        <div class="hero-actions">
+          <button class="button button-primary button-large" id="start-button" type="button">
+            Start my compass
+            <span aria-hidden="true">→</span>
+          </button>
+          <span class="microcopy">No sign-up. Answers stay in your browser.</span>
+        </div>
+      </div>
+
+      <aside class="hero-panel" aria-label="What the assessment covers">
+        <div class="panel-kicker">Your four signals</div>
+        <ol class="signal-list">
+          <li>
+            <span class="signal-number">01</span>
+            <div><strong>Activity interests</strong><small>What kinds of problems and tasks pull you in</small></div>
+          </li>
+          <li>
+            <span class="signal-number">02</span>
+            <div><strong>Personality tendencies</strong><small>How you tend to engage, plan, and respond</small></div>
+          </li>
+          <li>
+            <span class="signal-number">03</span>
+            <div><strong>Work values</strong><small>What you want a future working life to provide</small></div>
+          </li>
+          <li>
+            <span class="signal-number">04</span>
+            <div><strong>Readiness evidence</strong><small>Where classes and projects already give you clues</small></div>
+          </li>
+        </ol>
+        <div class="panel-note">
+          <span aria-hidden="true">↗</span>
+          <p><strong>You will get options, not a verdict.</strong> The result ranks study families to investigate and gives you small real-world experiments to test them.</p>
+        </div>
+      </aside>
+
+      <div class="principle-strip" aria-label="Assessment principles">
+        <div><strong>01</strong><span>Research grounded</span></div>
+        <div><strong>02</strong><span>Teen-friendly language</span></div>
+        <div><strong>03</strong><span>No “perfect career” claim</span></div>
+      </div>
+
+      <details class="evidence-preview">
+        <summary>What “evidence-informed” means here</summary>
+        <div>
+          <p>The assessment uses the RIASEC vocational-interest framework, the public-domain 20-item Mini-IPIP Big Five measure, six established work-value domains, and readiness prompts. Research finds that interest–program fit is useful for reflection, but only a small predictor of achievement, persistence, and satisfaction. For that reason, this tool does not treat any score as destiny.</p>
+          <p>The original career-interest, values, readiness, field-mapping, and recommendation system in this prototype has not undergone an independent validation study. Use it to make a shortlist and better questions—not a final enrolment decision.</p>
+        </div>
+      </details>
+    </section>
+
+    <section id="assessment-view" class="view assessment-view" aria-live="polite" hidden>
+      <div class="assessment-shell">
+        <div class="progress-block">
+          <div class="progress-copy">
+            <span id="stage-label">Interests</span>
+            <span id="progress-label">Step 1 of 14</span>
+          </div>
+          <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Assessment progress">
+            <span id="progress-bar"></span>
+          </div>
+        </div>
+
+        <div class="question-intro">
+          <p class="eyebrow" id="section-kicker">Part 1 • Activity interests</p>
+          <h2 id="page-title">What would you enjoy doing?</h2>
+          <p id="page-help">Rate the activity itself—not whether you are already good at it or have had the chance to try it.</p>
+        </div>
+
+        <form id="question-form" novalidate>
+          <div id="questions" class="questions"></div>
+          <div id="form-error" class="form-error" role="alert" hidden>Please answer every question on this page before continuing.</div>
+
+          <div class="assessment-nav">
+            <button class="button button-secondary" id="back-button" type="button"><span aria-hidden="true">←</span> Back</button>
+            <span class="save-status" id="save-status">Answers save automatically</span>
+            <button class="button button-primary" id="next-button" type="submit">Continue <span aria-hidden="true">→</span></button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section id="results-view" class="view results-view" aria-labelledby="results-title" hidden>
+      <div id="results-content"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Designed for exploration, not diagnosis, selection, or admissions prediction.</p>
+    <button id="footer-method-button" type="button">Method &amp; sources</button>
+  </footer>
+
+  <dialog id="method-dialog" class="method-dialog">
+    <form method="dialog">
+      <button class="dialog-close" value="close" aria-label="Close method and sources">×</button>
+      <p class="eyebrow">Method &amp; sources</p>
+      <h2>What this tool can—and cannot—tell you</h2>
+      <div class="method-copy">
+        <p><strong>Interests.</strong> The original activity items are organized with the RIASEC model used in vocational psychology and by the O*NET® Interest Profiler. They are not the official O*NET items and this prototype is not an O*NET product.</p>
+        <p><strong>Personality.</strong> The 20 public-domain IPIP items form the Mini-IPIP Big Five scales. Scores show a position on the response scale, not a percentile and not a fixed “type.” Personality describes tendencies; it does not decide a suitable degree.</p>
+        <p><strong>Values and readiness.</strong> The six value domains are informed by the O*NET Work Importance Locator framework. The wording and short scales here are original and have not been independently validated. Readiness ratings are self-reflection prompts, not aptitude tests.</p>
+        <p><strong>Study-family ranking.</strong> Each family has a documented target profile. The exploration score is 65% activity interests, 20% current readiness evidence, and 15% work values. Those weights are a transparent design heuristic, not a clinically or psychometrically validated prediction model. Personality is deliberately excluded from the ranking to reduce typecasting.</p>
+      </div>
+      <div class="source-list">
+        <a href="https://www.onetcenter.org/reports/IP_Manual.html" target="_blank" rel="noreferrer"><span>RIASEC / interests</span><strong>O*NET® Interest Profiler Manual</strong></a>
+        <a href="https://doi.org/10.1037/1040-3590.18.2.192" target="_blank" rel="noreferrer"><span>Big Five measure</span><strong>Donnellan et al. (2006), Mini-IPIP</strong></a>
+        <a href="https://ipip.ori.org/" target="_blank" rel="noreferrer"><span>Public-domain items</span><strong>International Personality Item Pool</strong></a>
+        <a href="https://doi.org/10.1016/j.edurev.2024.100619" target="_blank" rel="noreferrer"><span>Interest–program fit</span><strong>de Vries et al. (2024) meta-analysis</strong></a>
+        <a href="https://doi.org/10.1016/j.paid.2015.04.030" target="_blank" rel="noreferrer"><span>Personality and majors</span><strong>Vedel et al. (2015)</strong></a>
+        <a href="https://doi.org/10.1016/j.jvb.2006.04.005" target="_blank" rel="noreferrer"><span>Adolescent work values</span><strong>Porfeli (2007) longitudinal study</strong></a>
+      </div>
+      <p class="license-note">The IPIP personality items are in the public domain. “O*NET” is a trademark of the U.S. Department of Labor, Employment and Training Administration. No affiliation or endorsement is implied.</p>
+      <button class="button button-primary" value="close">Close</button>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
